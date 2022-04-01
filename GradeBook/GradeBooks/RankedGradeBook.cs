@@ -21,38 +21,38 @@ namespace GradeBook.GradeBooks
         {
 
             char grade = 'F';
+
             double HighScore = (from student in Students select student.AverageGrade).Max();
 
-
-            if(Students.Count < 5)
+            if (Students.Count < 5)
             {
 
                 throw new InvalidCastException();
-
+                
             }
 
-            if (averageGrade > HighScore/20)
+            if (averageGrade > HighScore/5*4)
             {
 
                 grade = 'A';
             
             }
 
-            else if (averageGrade > HighScore / 15)
+            else if (averageGrade > HighScore /5*3)
             {
 
-                grade = 'F';
+                grade = 'B';
 
             }
 
-            else if (averageGrade > HighScore / 10)
+            else if (averageGrade > HighScore /5*2)
             {
 
                 grade = 'C';
 
             }
 
-            else if (averageGrade > HighScore / 5)
+            else if (averageGrade > HighScore /5)
             {
 
                 grade = 'D';
