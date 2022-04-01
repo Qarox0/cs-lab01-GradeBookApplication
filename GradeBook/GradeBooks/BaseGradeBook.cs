@@ -9,26 +9,20 @@ using Newtonsoft.Json.Linq;
 
 namespace GradeBook.GradeBooks
 {
-    public class BaseGradeBook
+    public abstract class BaseGradeBook
     {
         public bool IsWeighted { get; set; }
         public GradeBookType Type { get; set; }
         public string Name { get; set; }
         public List<Student> Students { get; set; }
 
-        public BaseGradeBook(string name)
-        {
-            Name = name;
-            Students = new List<Student>();
-        }
-
-        public BaseGradeBook(string name , bool isWeighted)
+       public BaseGradeBook(string name , bool isWeighted)
         {
             Name = name;
             IsWeighted = isWeighted;
             Students = new List<Student>();
         }
-
+       
         public void AddStudent(Student student)
         {
             if (string.IsNullOrEmpty(student.Name))
